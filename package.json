@@ -1,0 +1,49 @@
+{
+    "name": "next-error-reporter",
+    "version": "1.0.0",
+    "description": "VersionWatch error reporting library for Next.js applications",
+    "main": "./dist/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/types/index.d.ts",
+    "files": [
+      "dist/**/*"
+    ],
+    "scripts": {
+      "build": "npm run build:cjs && npm run build:esm && npm run build:types",
+      "build:cjs": "tsc -p tsconfig.json",
+      "build:esm": "tsc -p tsconfig.esm.json",
+      "build:types": "tsc -p tsconfig.types.json",
+      "prepublishOnly": "npm run build",
+      "test": "jest"
+    },
+    "peerDependencies": {
+      "next": ">=12.0.0",
+      "react": ">=17.0.0",
+      "react-dom": ">=17.0.0"
+    },
+    "dependencies": {
+      "axios": "^1.6.2"
+    },
+    "devDependencies": {
+      "@types/react": "^18.2.15",
+      "@types/node": "^20.5.1",
+      "typescript": "^5.2.2",
+      "jest": "^29.7.0",
+      "@types/jest": "^29.5.4"
+    },
+    "keywords": [
+      "nextjs",
+      "error-reporting",
+      "monitoring",
+      "error-handling",
+      "react-error-boundary"
+    ],
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/yourusername/next-error-reporter.git"
+    },
+    "bugs": {
+      "url": "https://github.com/yourusername/next-error-reporter/issues"
+    }
+  }
