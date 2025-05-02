@@ -10,9 +10,9 @@
     ],
     "scripts": {
       "build": "npm run build:cjs && npm run build:esm && npm run build:types",
-      "build:cjs": "tsc -p tsconfig.json",
+      "build:cjs": "tsc -p tsconfig.cjs.json",
       "build:esm": "tsc -p tsconfig.esm.json",
-      "build:types": "tsc -p tsconfig.types.json",
+      "build:types": "tsc -p tsconfig.json --emitDeclarationOnly",
       "prepublishOnly": "npm run build",
       "test": "jest"
     },
@@ -45,5 +45,12 @@
     },
     "bugs": {
       "url": "https://github.com/versionwatch/next-error-reporter/issues"
+    },
+    "exports": {
+      ".": {
+        "require": "./dist/cjs/index.js",
+        "import": "./dist/esm/index.js",
+        "types": "./dist/types/index.d.ts"
+      }
     }
   }
